@@ -6,7 +6,7 @@
   "scripts": {
     "clean": "rimraf dist",
     "prebuild": "npm run clean",
-    "build": "cross-env NODE_ENV=production webpack --config ./config/webpack.config.js",
+    "build": "cross-env NODE_ENV=production node --max-old-space-size=4096 node_modules/webpack/bin/webpack.js --config ./config/webpack.config.js",
     "test": "jest",
     "start": "cross-env NODE_ENV=development node --max-old-space-size=4096 node_modules/webpack-dev-server/bin/webpack-dev-server.js --config ./config/webpack.config.js",
     "start:prod": "cross-env NODE_ENV=production webpack-dev-server --config ./config/webpack.config.js",
